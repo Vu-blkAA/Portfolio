@@ -8,8 +8,9 @@ const config: Config = {
     ],
     theme: {
         extend: {
+            display: ["group-hover"],
             colors: {
-                accent: "#f13024"
+                accent: "#f13024",
             },
             fontSize: {
                 "2xs": ["10px", "1.5"],

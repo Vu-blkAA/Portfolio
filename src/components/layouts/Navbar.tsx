@@ -38,19 +38,28 @@ const NavBar = () => {
     const pathName = usePathname();
 
     return (
-        <div className="w-full flex absolute bottom-0 left-0 justify-around bg-[rgba(255,255,255,0.4)] md:flex-col md:top-1/2 md:right-10 md:left-auto md:-translate-y-1/2 md:w-fit md:rounded-full md:items-center">
+        <div className="w-full flex justify-around absolute bottom-0 left-0 bg-[rgba(255,255,255,0.4)] md:flex-col md:top-1/2 md:right-10 md:left-auto md:-translate-y-1/2 md:w-fit md:rounded-full md:items-center">
             {NavbarList.map((item) => (
-                <Link
-                    href={item.href}
-                    className={`p-4 ${
-                        pathName === item.href ? "text-accent" : ""
-                    }`}
+                <div
                     key={item.id}
+                    className="relative group hover:cursor-pointer"
                 >
-                    {React.cloneElement(item.icon, {
-                        ...(pathName === item.href ? { fill: "#f13024" } : {}),
-                    })}
-                </Link>
+                    <Link
+                        href={item.href}
+                        className={`inline-block p-4 ${
+                            pathName === item.href ? "text-accent" : ""
+                        }`}
+                    >
+                        {React.cloneElement(item.icon, {
+                            ...(pathName === item.href
+                                ? { fill: "#f13024" }
+                                : {}),
+                        })}
+                    </Link>
+                    <div className="absolute bg-white text-black top-1/2 right-[calc(100%+4px)] -translate-y-1/2 px-2 py-1 rounded-lg hidden group-hover:hidden md:group-hover:block">
+                        {item.label}
+                    </div>
+                </div>
             ))}
         </div>
     );
