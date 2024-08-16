@@ -1,45 +1,54 @@
-import type { Config } from "tailwindcss";
+import type { Config } from "tailwindcss"
 
-const config: Config = {
-    content: [
-        "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-        "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-        "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-    ],
-    theme: {
-        extend: {
-            display: ["group-hover"],
-            colors: {
-                accent: "#f13024",
-            },
-            fontSize: {
-                "2xs": ["10px", "1.5"],
-                xs: ["12px", "1.5"],
-                sm: ["14px", "1.5"],
-                md: ["16px", "1.5"],
-                lg: ["18px", "1.5"],
-                xl: ["20px", "1.5"],
-                "2xl": ["24px", "1.5"],
-                "3xl": ["30px", "1.5"],
-                "4xl": ["36px", "1.5"],
-                "5xl": ["48px", "1.5"],
-                "6xl": ["60px", "1.5"],
-                "7xl": ["72px", "1.5"],
-                "8xl": ["96px", "1.5"],
-                "9xl": ["128px", "1.5"],
-            },
-            screens: {
-                sm: "640px",
-                md: "768px",
-                lg: "1024px",
-                xl: "1280px",
-                "2xl": "1536px",
-            },
-            fontFamily: {
-                sora: [`var(--font-sora)`, "sans-serif"]
-            }
-        },
+const config = {
+  darkMode: ["class"],
+  content: [
+    './pages/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}',
+  ],
+  prefix: "",
+  theme: {
+    container: {
+      center: true,
+      padding: "15px",
+      screens: {
+        sm: "640px",
+        md: "768px",
+        lg: "960px",
+        xl: "1200px",
+        "2xl": "1400px",
+      },
     },
-    plugins: [],
-};
-export default config;
+    fontFamily: {
+      primary: "var(--font-jetbrainsMono)"
+    },
+    extend: {
+      colors: {
+        primary: "#1c1c22",
+        accent: {
+          DEFAULT: '#00ff99',
+          hover: "#00e187",
+        }
+      },
+      keyframes: {
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+      },
+    },
+  },
+  plugins: [require("tailwindcss-animate")],
+} satisfies Config
+
+export default config
