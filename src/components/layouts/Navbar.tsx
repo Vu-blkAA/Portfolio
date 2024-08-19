@@ -1,52 +1,51 @@
-"use client"
+'use client'
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-
-
+import React from 'react'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 const links = [
-    {
-        name: "home",
-        path: "/"
-    },
-    {
-        name: "services",
-        path: "/services"
-    },
-    {
-        name: "resume",
-        path: "/resume"
-    },
-    {
-        name: "work",
-        path: "/work"
-    },
-    {
-        name: "contact",
-        path: "/contact"
-    },
+  {
+    name: 'home',
+    path: '/',
+  },
+  {
+    name: 'services',
+    path: '/services',
+  },
+  {
+    name: 'resume',
+    path: '/resume',
+  },
+  {
+    name: 'work',
+    path: '/work',
+  },
+  {
+    name: 'contact',
+    path: '/contact',
+  },
 ]
 
 const Navbar = () => {
-    const pathname = usePathname();
+  const pathname = usePathname()
 
-    return (
-        <nav className="flex gap-8">
-            {links.map((link, idx) => (
-                <Link href={link.path} key={idx} className={`capitalize font-medium hover:text-accent transition-all ${link.path === pathname ? "text-accent border-b-2 border-accent" : ''}`}>
-                    {link.name}
-                </Link>
-            ))}
-        </nav>
-    )
+  return (
+    <nav className='flex gap-8'>
+      {links.map((link, idx) => (
+        <Link
+          href={link.path}
+          key={idx}
+          className={`capitalize font-medium hover:text-accent transition-all ${link.path === pathname ? 'text-accent border-b-2 border-accent' : ''}`}
+        >
+          {link.name}
+        </Link>
+      ))}
+    </nav>
+  )
 }
 
-export default Navbar;
-
-
-
-
+export default Navbar
 
 // "use client";
 // import CodeIcon from "@/src/assets/icons/Code";
