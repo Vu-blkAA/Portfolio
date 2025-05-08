@@ -11,7 +11,7 @@ interface Props {
 const PageTransition = ({ children }: Props) => {
   const pathname = usePathname()
   return (
-    <AnimatePresence>
+    <AnimatePresence mode='wait'>
       <div key={pathname}>
         <motion.div
           initial={{ opacity: 1 }}

@@ -3,6 +3,14 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import Lottie from "lottie-react";
+import devLottie from "@/public/assets/dev-lottie.json"
+import flyLottie from "@/public/assets/fly-lottie.json"
+import solarLottie from "@/public/assets/solar-lottie.json"
+import earthLottie from "@/public/assets/earth-lottie.json"
+import rocketLottie from "@/public/assets/rocket-lottie.json"
+import rocketLottie2 from "@/public/assets/rocket2-lottie.json"
+import planetLottie2 from "@/public/assets/plane2-lottie.json"
 
 const Photo = () => {
   return (
@@ -21,16 +29,12 @@ const Photo = () => {
             opacity: 1,
             transition: { delay: 2.4, duration: 0.4, ease: 'easeInOut' },
           }}
-          className='w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] mix-blend-lighten absolute'
+          className='w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] absolute'
         >
-          <Image
-            src='/assets/photo.png'
-            priority
-            quality={100}
-            fill
-            alt='avatar'
-            className='object-contain'
-          />
+          <div className='absolute top-0 left-0 w-full h-full'>
+            <Lottie animationData={devLottie} className='absolute top-[20px] left-[-240px] w-full h-full z-20' />
+            <Lottie animationData={planetLottie2} className='absolute w-[800px] h-[800px] top-[-105px] left-[-105px] z-0' />
+          </div>
         </motion.div>
 
         {/* Circle */}
@@ -44,7 +48,7 @@ const Photo = () => {
             cx={253}
             cy={253}
             r={250}
-            stroke='#00ff99'
+            stroke='var(--accent)'
             strokeWidth={4}
             strokeLinecap='round'
             strokeLinejoin='round'
@@ -61,7 +65,7 @@ const Photo = () => {
           />
         </motion.svg>
       </motion.div>
-    </div>
+    </div >
   )
 }
 

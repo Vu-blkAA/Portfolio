@@ -14,7 +14,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: 'Portfolio',
-  description: "Treyy's Portfolio",
+  description: "Treyy Nguyen's Portfolio",
 }
 
 export default function RootLayout({
@@ -27,7 +27,7 @@ export default function RootLayout({
       <body className={jetbrainsMono.variable}>
         <Header />
         <StairTransition />
-        <PageTransition>{children}</PageTransition>
+        {/* <PageTransition>{children}</PageTransition> */}
       </body>
     </html>
   )
