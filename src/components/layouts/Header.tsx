@@ -2,6 +2,7 @@ import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import MobileNavbar from './MobileNavbar'
 import NavBar from './Navbar'
+import * as React from 'react'
 
 const Header = () => {
   return (

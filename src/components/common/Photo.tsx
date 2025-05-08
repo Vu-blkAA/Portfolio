@@ -1,16 +1,10 @@
 'use client'
 
-import React from 'react'
+import devLottie from '@/public/assets/dev-lottie.json'
+import planetLottie2 from '@/public/assets/plane2-lottie.json'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
-import Lottie from "lottie-react";
-import devLottie from "@/public/assets/dev-lottie.json"
-import flyLottie from "@/public/assets/fly-lottie.json"
-import solarLottie from "@/public/assets/solar-lottie.json"
-import earthLottie from "@/public/assets/earth-lottie.json"
-import rocketLottie from "@/public/assets/rocket-lottie.json"
-import rocketLottie2 from "@/public/assets/rocket2-lottie.json"
-import planetLottie2 from "@/public/assets/plane2-lottie.json"
+import Lottie from 'lottie-react'
+import * as React from 'react'
 
 const Photo = () => {
   return (
@@ -32,8 +26,14 @@ const Photo = () => {
           className='w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] absolute'
         >
           <div className='absolute top-0 left-0 w-full h-full'>
-            <Lottie animationData={devLottie} className='absolute top-[20px] left-[-240px] w-full h-full z-20' />
-            <Lottie animationData={planetLottie2} className='absolute w-[800px] h-[800px] top-[-105px] left-[-105px] z-0' />
+            <Lottie
+              animationData={devLottie}
+              className='absolute top-[20px] left-[-240px] w-full h-full z-20'
+            />
+            <Lottie
+              animationData={planetLottie2}
+              className='absolute w-[800px] h-[800px] top-[-105px] left-[-105px] z-0'
+            />
           </div>
         </motion.div>
 
@@ -65,7 +65,7 @@ const Photo = () => {
           />
         </motion.svg>
       </motion.div>
-    </div >
+    </div>
   )
 }
 

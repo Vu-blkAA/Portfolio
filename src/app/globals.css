@@ -28,10 +28,9 @@
   }
 }
 
-
 :root {
   --primary: #1c1c22;
 
-  --accent: #42A5F5;
+  --accent: #42a5f5;
   --accent-hover: #00e187;
 }
