@@ -78,7 +78,7 @@ const Contact = () => {
                 }}
               />
               {/* Button */}
-              <Button style={{ backgroundColor: !!message.length ? 'var(--accent)' : '#3c3c3c' }} disabled={!message.length} size='md' onClick={onSendMessage}>Send message (By Telegram)</Button>
+              <Button style={{ backgroundColor: message.length ? 'var(--accent)' : '#3c3c3c' }} disabled={!message.length} size='md' onClick={onSendMessage}>Send message (By Telegram)</Button>
             </form>
           </div>
           {/* Info */}
