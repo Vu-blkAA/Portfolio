@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
 import { PROFILE_LINK } from '@/src/constants/profile'
 import { motion } from 'framer-motion'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { FaEnvelope, FaLinkedin, FaMapMarkedAlt, FaPhoneAlt } from 'react-icons/fa'
 
 const info = [
