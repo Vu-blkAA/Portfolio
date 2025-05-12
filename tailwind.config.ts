@@ -2,6 +2,20 @@ import type { Config } from 'tailwindcss'
 
 const config = {
   darkMode: ['class'],
+  safelist: [
+    'group-hover:text-skill-html5',
+    'group-hover:text-skill-css3',
+    'group-hover:text-skill-javascript',
+    'group-hover:text-skill-react',
+    'group-hover:text-skill-nextjs',
+    'group-hover:text-skill-nodejs',
+    'group-hover:text-skill-tailwindcss',
+    'group-hover:text-skill-github',
+    'group-hover:text-skill-figma',
+    'group-hover:text-skill-aws',
+    'group-hover:text-skill-database',
+    'group-hover:text-skill-atlassian',
+  ],
   content: [
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
@@ -39,6 +53,20 @@ const config = {
         accent: {
           DEFAULT: 'var(--accent)',
           hover: 'var(--accent-hover)',
+        },
+        skill: {
+          html5: 'var(--html5)',
+          css3: 'var(--css3)',
+          javascript: 'var(--javascript)',
+          react: 'var(--react)',
+          nextjs: 'var(--nextjs)',
+          nodejs: 'var(--nodejs)',
+          tailwindcss: 'var(--tailwindcss)',
+          github: 'var(--github)',
+          figma: 'var(--figma)',
+          aws: 'var(--aws)',
+          database: 'var(--database)',
+          atlassian: 'var(--atlassian)',
         },
       },
       keyframes: {

@@ -33,4 +33,17 @@
 
   --accent: #42a5f5;
   --accent-hover: #00e187;
+
+  --html5: #e44d26;
+  --css3: #264de4;
+  --javascript: #f0db4f;
+  --react: #61dafb;
+  --nextjs: #000000;
+  --nodejs: #339933;
+  --tailwindcss: #38bdf8;
+  --github: #181717;
+  --figma: #ff6951;
+  --aws: #ff9900;
+  --database: #404040;
+  --atlassian: #0052cc;
 }

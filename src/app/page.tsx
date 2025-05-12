@@ -48,7 +48,7 @@ const Page = () => {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 1, duration: 0.4, ease: 'easeInOut' }}
+            transition={{ delay: 2, duration: 0.4, ease: 'easeInOut' }}
             className='order-2 xl:order-none text-center xl:text-left'
           >
             <div className="flex flex-col mt-6 xl:mt-0 gap-9 2k:gap-12">
