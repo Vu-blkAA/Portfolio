@@ -1,3 +1,4 @@
+import { PROFILE_LINK } from '@/src/constants/profile'
 import React from 'react'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 
@@ -9,11 +10,11 @@ interface Props {
 const socials = [
   {
     icon: <FaGithub />,
-    path: 'https://github.com/Vu-blkAA',
+    path: PROFILE_LINK.github,
   },
   {
     icon: <FaLinkedin />,
-    path: 'https://www.linkedin.com/in/vunguyen17/',
+    path: PROFILE_LINK.linkedin,
   },
 ]
 

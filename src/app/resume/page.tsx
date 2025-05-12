@@ -194,7 +194,7 @@ const Resume = () => {
                   {experience.description}
                 </p>
                 <ScrollArea className='h-[400px]'>
-                  <ul className='grid grid-cols-1 lg:grid-cols-2 gap-[30px]'>
+                  <ul className='grid grid-cols-1 gap-[30px]'>
                     {experience.items.map((i, idx) => (
                       <li
                         key={idx}
@@ -251,7 +251,7 @@ const Resume = () => {
                     {skills.description}
                   </p>
                 </div>
-                <ul className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]'>
+                <ul className='grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6 gap-4 xl:gap-[30px] 2xl:gap-[20px]'>
                   {skills.skillList.map((skill, idx) => (
                     <li key={idx}>
                       <TooltipProvider delayDuration={100}>

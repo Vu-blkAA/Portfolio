@@ -1,22 +1,18 @@
 'use client'
 
-import React from 'react'
 import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select'
 import { Textarea } from '@/components/ui/textarea'
+import { PROFILE_LINK } from '@/src/constants/profile'
 import { motion } from 'framer-motion'
-import { FaPhoneAlt, FaEnvelope, FaMapMarkedAlt } from 'react-icons/fa'
+import { useState } from 'react'
+import { FaEnvelope, FaLinkedin, FaMapMarkedAlt, FaPhoneAlt } from 'react-icons/fa'
 
 const info = [
+  {
+    icon: <FaMapMarkedAlt />,
+    title: 'Address',
+    description: 'Ho Chi Minh, Vietnam',
+  },
   {
     icon: <FaPhoneAlt />,
     title: 'Phone',
@@ -26,15 +22,30 @@ const info = [
     icon: <FaEnvelope />,
     title: 'Email',
     description: 'vublkaa@gmail.com',
+    link: PROFILE_LINK.email,
   },
   {
-    icon: <FaMapMarkedAlt />,
-    title: 'Address',
-    description: 'Where are you now?',
+    icon: <FaLinkedin />,
+    title: 'Linkedin',
+    description: 'linkedin.com/in/vunguyen17/',
+    link: PROFILE_LINK.linkedin,
   },
 ]
 
+const TELEGRAM_USERNAME = 'treyy003'
+
 const Contact = () => {
+  const [message, setMessage] = useState('');
+
+  const onSendMessage = (event: React.FormEvent<EventTarget & HTMLButtonElement>) => {
+    event.preventDefault();
+
+    const telegramMessage = `Xin chào 👋👋, có tin nhắn mới từ portfolio 💥💥:\n\nNội dung:  ${message}`
+    const telegramUrl = `https://t.me/${TELEGRAM_USERNAME}?text=${encodeURIComponent(telegramMessage)}`
+
+    window.open(telegramUrl, '_blank')
+  }
+
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -50,38 +61,24 @@ const Contact = () => {
           <div className='xl:w-[54%] order-2 xl:order-none'>
             <form className='flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl'>
               <h3 className='text-4xl text-accent'>Let&apos;s work together</h3>
-              <p className='text-white/60'>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry.
-              </p>
               {/* input */}
               <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
-                <Input type='firstname' placeholder='First name' />
-                <Input type='lastname' placeholder='Last name' />
-                <Input type='email' placeholder='Email address' />
-                <Input type='phone' placeholder='Phone number' />
               </div>
-              {/* Select */}
-              <Select>
-                <SelectTrigger className='w-full'>
-                  <SelectValue placeholder='Select a service' />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectGroup>
-                    <SelectLabel>Select a service</SelectLabel>
-                    <SelectItem value='est'>Web Development</SelectItem>
-                    <SelectItem value='cst'>UI/UX Design</SelectItem>
-                    <SelectItem value='mst'>Logo Design</SelectItem>
-                  </SelectGroup>
-                </SelectContent>
-              </Select>
               {/* Text area */}
               <Textarea
                 className='h-[200px]'
                 placeholder='Type your message here.'
+                onChange={(e) => {
+                  console.log(e.target.value.length)
+                  if (e.target.value.length > 0) {
+                    setMessage(e.target.value)
+                  } else {
+                    setMessage('')
+                  }
+                }}
               />
               {/* Button */}
-              <Button size='md'>Send message</Button>
+              <Button style={{ backgroundColor: !!message.length ? 'var(--accent)' : '#3c3c3c' }} disabled={!message.length} size='md' onClick={onSendMessage}>Send message (By Telegram)</Button>
             </form>
           </div>
           {/* Info */}
@@ -94,7 +91,13 @@ const Contact = () => {
                   </div>
                   <div className='flex-1'>
                     <p className='text-white/60'>{i.title}</p>
-                    <h3 className='text-xl'>{i.description}</h3>
+                    <h3 className='text-xl'>
+                      {i.link ? (
+                        <a className='underline' href={i.link} target='_blank' rel='noopener noreferrer'>{i.description}</a>
+                      ) : (
+                        i.description
+                      )}
+                    </h3>
                   </div>
                 </li>
               ))}

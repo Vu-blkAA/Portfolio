@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion'
 import React, { useState } from 'react'
-
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 
@@ -21,70 +20,95 @@ import WorkSliderBtns from '@/src/components/common/WorkSliderBtns'
 const projects = [
   {
     num: '01',
-    category: 'frontend',
-    title: 'project 1',
+    category: 'Belink HRM',
     description:
-      'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+      `Belink HRM is comprehensive digital HR platform designed to streamline workforce management, optimize operations, and enhance employee engagement within Liberty Group.
+       It enables seamless coordination, allocation, and administration of human resources, helping organizations achieve their strategic goals.`,
     stack: [
       {
-        name: 'Html 5',
+        name: 'ReactJS',
       },
       {
-        name: 'Css 3',
+        name: 'TypeScript',
       },
       {
-        name: 'Javascript',
+        name: 'AntDesign',
+      },
+      {
+        name: 'TailwindCSS',
+      },
+      {
+        name: 'Sass',
+      },
+      {
+        name: 'React Query',
+      },
+      {
+        name: 'NestJS',
+      },
+      {
+        name: 'MongoDB',
       },
     ],
-    image: '/assets/work/thumb1.png',
+    image: '/assets/work/HRM.png',
     live: '',
     github: '',
   },
   {
     num: '02',
-    category: 'frontend',
-    title: 'project 2',
+    category: 'Liberty Carz',
     description:
-      'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+      `Liberty Carz is a digital automotive marketplace powered by Liberty Technology. With Liberty Carz, customers can find high-quality cars to buy and rent, 
+      and sellers can connect with potential customers. This application has revolutionized the auto industry in Cambodia and become No.1 Car Trading App in this country.`,
     stack: [
       {
-        name: 'Html 5',
+        name: 'NextJS',
       },
       {
-        name: 'Css 3',
+        name: 'TypeScript',
       },
       {
-        name: 'Next.js',
+        name: 'AntDesign',
       },
       {
-        name: 'Tailwind.css',
+        name: 'TailwindCSS',
+      },
+      {
+        name: 'Sass',
+      },
+      {
+        name: 'Zustand',
       },
     ],
-    image: '/assets/work/thumb2.png',
-    live: '',
+    image: '/assets/work/Carz.png',
+    live: 'https://www.libertycarz.com/',
     github: '',
   },
   {
     num: '03',
-    category: 'frontend',
-    title: 'project 3',
+    category: 'Cafefinz',
     description:
-      'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+      `Cafefinz focuses on content, knowledge, and news related to investing. In addition, it serves as a platform where users can share 
+      their personal perspectives on investing in general, and financial investment in particular.
+`,
     stack: [
       {
-        name: 'Html 5',
+        name: 'NextJS',
       },
       {
-        name: 'Css 3',
+        name: 'TypeScript',
       },
       {
-        name: 'Next.js',
+        name: 'React Query',
       },
       {
-        name: 'Tailwind.css',
+        name: 'Redux',
+      },
+      {
+        name: 'TailwindCSS',
       },
     ],
-    image: '/assets/work/thumb3.png',
+    image: '/assets/work/Cafefinz.jpg',
     live: '',
     github: '',
   },
@@ -120,7 +144,7 @@ const Work = () => {
               </h2>
               <p className='text-white/60'>{project.description}</p>
               {/* Stack */}
-              <ul className='flex gap-4'>
+              <ul className='flex flex-wrap gap-4'>
                 {project.stack.map((i, idx) => (
                   <li key={idx} className='text-xl text-accent'>
                     {i.name} {idx !== project.stack.length - 1 && ','}
@@ -128,35 +152,45 @@ const Work = () => {
                 ))}
               </ul>
               {/* Border */}
-              <div className='border border-white/20' />
+              {(project.live || project.github) && (
+                <div className='border border-white/20' />
+              )}
               {/* Button */}
               <div className='flex items-center gap-4'>
                 {/* Live project button */}
-                <Link href={project.live}>
-                  <TooltipProvider>
-                    <Tooltip>
-                      <TooltipTrigger className='w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group'>
-                        <BsArrowUpRight className='text-white text-3xl group-hover:text-accent' />
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>Live project</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </Link>
+                {
+                  project.live && (
+                    <Link href={project.live} target='_blank'>
+                      <TooltipProvider>
+                        <Tooltip>
+                          <TooltipTrigger className='w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group'>
+                            <BsArrowUpRight className='text-white text-3xl group-hover:text-accent' />
+                          </TooltipTrigger>
+                          <TooltipContent>
+                            <p>Live project</p>
+                          </TooltipContent>
+                        </Tooltip>
+                      </TooltipProvider>
+                    </Link>
+                  )
+                }
                 {/* Github project button */}
-                <Link href={project.github}>
-                  <TooltipProvider>
-                    <Tooltip>
-                      <TooltipTrigger className='w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group'>
-                        <BsGithub className='text-white text-3xl group-hover:text-accent' />
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>Live project</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </Link>
+                {
+                  project.github && (
+                    <Link href={project.github} target='_blank'>
+                      <TooltipProvider>
+                        <Tooltip>
+                          <TooltipTrigger className='w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group'>
+                            <BsGithub className='text-white text-3xl group-hover:text-accent' />
+                          </TooltipTrigger>
+                          <TooltipContent>
+                            <p>Github</p>
+                          </TooltipContent>
+                        </Tooltip>
+                      </TooltipProvider>
+                    </Link>
+                  )
+                }
               </div>
             </div>
           </div>
@@ -169,14 +203,15 @@ const Work = () => {
             >
               {projects.map((prj, idx) => (
                 <SwiperSlide key={idx} className='w-full'>
-                  <div className='h-[460px] relative group flex justify-center items-center bg-pink-50/20'>
+                  <div className='h-[380px] relative group flex justify-center items-center'>
                     {/* Overlay */}
-                    <div className='absolute top-0 bottom-0 w-full h-full bg-black/10 z-10' />
+                    <div className='absolute top-0 bottom-0 w-full h-full z-10' />
                     {/* Image */}
                     <div>
                       <Image
-                        src={project.image}
-                        fill
+                        src={prj.image}
+                        width={600}
+                        height={600}
                         className='object-cover'
                         alt=''
                       />
