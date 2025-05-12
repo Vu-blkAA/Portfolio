@@ -1,5 +1,6 @@
 'use client'
 
+import { motion } from 'framer-motion'
 import React from 'react'
 import CountUp from 'react-countup'
 
@@ -28,14 +29,17 @@ const Stats = () => {
       <div className='container mx-auto'>
         <div className='flex flex-wrap gap-6 max-w-[80vw] mx-auto xl:max-w-none'>
           {stats.map((item, idx) => (
-            <div
+            <motion.div
               key={idx}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.4, delay: 1 + idx * 0.3 }}
               className='flex flex-1 gap-4 items-center justify-center xl:justify-start'
             >
               <CountUp
                 end={item.num}
                 duration={5}
-                delay={2}
+                delay={2.5}
                 className='text-4xl xl:text-6xl font-extrabold'
               />
               <p
@@ -43,7 +47,7 @@ const Stats = () => {
               >
                 {item.text}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

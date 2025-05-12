@@ -23,23 +23,23 @@ const Photo = () => {
             opacity: 1,
             transition: { delay: 2.4, duration: 0.4, ease: 'easeInOut' },
           }}
-          className='w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] absolute'
+          className='w-[268px] h-[268px] xl:w-[400px] xl:h-[400px] 2xl:w-[498px] 2xl:h-[498px] absolute'
         >
           <div className='absolute top-0 left-0 w-full h-full'>
             <Lottie
               animationData={devLottie}
-              className='absolute top-[20px] left-[-240px] w-full h-full z-20'
+              className='absolute w-full h-full z-20 top-[-10px] left-[-60px] xl:top-[60px] xl:left-[-300px] 2xl:top-[50px] 2xl:left-[-350px]'
             />
             <Lottie
               animationData={planetLottie2}
-              className='absolute w-[800px] h-[800px] top-[-105px] left-[-105px] z-0'
+              className='absolute z-0 w-[340px] h-[340px] top-[-43px] left-[37px] xl:w-[630px] xl:h-[630px] xl:top-[-83px] xl:left-[-183px] 2xl:w-[750px] 2xl:h-[750px] 2xl:top-[-100px] 2xl:left-[-200px]'
             />
           </div>
         </motion.div>
 
         {/* Circle */}
         <motion.svg
-          className='w-[300px] xl:w-[506px] h-[300px] xl:h-[506px]'
+          className='w-[220px] h-[220px] ml-[80px] xl:w-[400px] xl:h-[400px] xl:ml-[-100px] 2xl:w-[480px] 2xl:h-[480px]'
           fill='transparent'
           viewBox='0 0 506 506'
           xmlns='http://www.w3.org/2000/svg'
