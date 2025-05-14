@@ -11,10 +11,12 @@ const socials = [
   {
     icon: <FaGithub />,
     path: PROFILE_LINK.github,
+    ariaLable: 'Github',
   },
   {
     icon: <FaLinkedin />,
     path: PROFILE_LINK.linkedin,
+    ariaLable: 'Linkedin',
   },
 ]
 
@@ -28,6 +30,7 @@ const Socials = ({ containerStyles, iconStyles }: Props) => {
           key={idx}
           href={item.path}
           className={iconStyles}
+          aria-label={item.ariaLable}
         >
           {item.icon}
         </a>
