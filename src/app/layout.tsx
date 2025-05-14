@@ -13,8 +13,20 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Portfolio',
-  description: "Treyy Nguyen's Portfolio",
+  title: 'Trey Nguyen',
+  description: "Welcome to Trey Nguyen's Portfolio",
+  icons: {
+    icon: '/favicon.ico',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    title: 'Trey Nguyen',
+    description: "Welcome to Trey Nguyen's Portfolio",
+    images: '/favicon.ico',
+  },
 }
 
 export default function RootLayout({

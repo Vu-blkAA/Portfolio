@@ -3,8 +3,12 @@
 import devLottie from '@/public/assets/dev-lottie.json'
 import planetLottie2 from '@/public/assets/plane2-lottie.json'
 import { motion } from 'framer-motion'
-import Lottie from 'lottie-react'
 import * as React from 'react'
+import dynamic from 'next/dynamic';
+const LottieAnimation = dynamic(
+  () => import('lottie-react').then((mod) => mod.default),
+  { ssr: false }
+);
 
 const Photo = () => {
   return (
@@ -26,11 +30,11 @@ const Photo = () => {
           className='w-[268px] h-[268px] xl:w-[400px] xl:h-[400px] 2xl:w-[498px] 2xl:h-[498px] absolute'
         >
           <div className='absolute top-0 left-0 w-full h-full'>
-            <Lottie
+            <LottieAnimation
               animationData={devLottie}
               className='absolute w-full h-full z-20 top-[-10px] left-[-60px] xl:top-[60px] xl:left-[-300px] 2xl:top-[50px] 2xl:left-[-350px]'
             />
-            <Lottie
+            <LottieAnimation
               animationData={planetLottie2}
               className='absolute z-0 w-[340px] h-[340px] top-[-43px] left-[37px] xl:w-[630px] xl:h-[630px] xl:top-[-83px] xl:left-[-183px] 2xl:w-[750px] 2xl:h-[750px] 2xl:top-[-100px] 2xl:left-[-200px]'
             />

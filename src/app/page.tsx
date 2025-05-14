@@ -21,7 +21,6 @@ const colors = [
   '#40e0d0',
   '#00ff95',
   '#6a5acd',
-
 ]
 
 const gradientStyle = {
