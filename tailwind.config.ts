@@ -25,6 +25,8 @@ const config = {
   prefix: '',
   theme: {
     screens: {
+      xxs: '390px',
+      xs: '480px',
       sm: '640px',
       md: '768px',
       lg: '960px',
@@ -37,6 +39,8 @@ const config = {
       center: true,
       padding: '15px',
       screens: {
+        xxs: '390px',
+        xs: '480px',
         sm: '640px',
         md: '768px',
         lg: '960px',

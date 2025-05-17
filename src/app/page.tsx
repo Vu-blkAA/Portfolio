@@ -51,7 +51,8 @@ const Page = () => {
             className='order-2 xl:order-none text-center xl:text-left'
           >
             <div className="flex flex-col mt-6 xl:mt-0 gap-9 2k:gap-12">
-              <p className='text-2xl'>Full-stack Developer</p>
+              <p className='text-2xl'>Front-end Developer</p>
+              {/* <p className='text-2xl'>Full-stack Developer</p> */}
               <h1 className='h1'>
                 Hello I&apos;m <br />
                 <motion.span

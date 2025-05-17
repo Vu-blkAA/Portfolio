@@ -27,7 +27,7 @@ const info = [
   {
     icon: <FaLinkedin />,
     title: 'Linkedin',
-    description: 'linkedin.com/in/vunguyen17/',
+    description: 'linkedin.com',
     link: PROFILE_LINK.linkedin,
   },
 ]

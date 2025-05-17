@@ -67,7 +67,8 @@ const experience = {
   items: [
     {
       company: 'Liberty Technology',
-      position: 'Full-stack Developer',
+      position: 'Front-end Developer',
+      // position: 'Full-stack Developer',
       duration: '2023 - Present',
     },
     {
